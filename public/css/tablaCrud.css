@@ -1,0 +1,64 @@
+.bg-morado {
+    background-color: #6f42c1;
+}
+.bg-azul {
+    background-color: #007bff;
+}
+.bg-black {
+    background-color: #000;
+}
+.contenedor {
+    width: 100%;
+    max-width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+}
+body {
+    background-image: url(../images/fondo1.jpg);
+    backdrop-filter: blur(10px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+
+@media (max-width: 768px) {
+    .table thead {
+        display: none;
+    }
+    .table, .table tbody, .table tr, .table td {
+        display: block;
+        width: 100%;
+    }
+    .table td {
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+        padding-right: 10px;
+        box-sizing: border-box;
+    }
+    .table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+        background-color: #333;
+        color: #fff;
+        border-right: 1px solid #ddd;
+    }
+}
+
+    .homeBtn {
+        color: white;
+        text-decoration: none;
+    }

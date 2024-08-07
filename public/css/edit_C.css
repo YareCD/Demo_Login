@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url(../images/fondo6.jpg);
+    backdrop-filter: blur(20px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+}
+
+.homeBtn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s;
+}
+
+.contenedorRegister {
+    color: #e0dfdf;
+    font-size: 14px;
+    width: 300px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.contenedorRegister h1 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.inputs {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.inputs input {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.inputs i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #fff;
+}
+
+.contenedorRegister .btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #e0dfdf;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.contenedorRegister .btn:hover {
+    background-color: #730381;
+}
+
+.select {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 20px 0;
+}
+
+.select select {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #ebdede;
+    padding: 0 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    appearance: none;
+}
+
+.select i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    pointer-events: none; 
+    color: #fff;
+}
+
+.select-rol, .select-estado {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: #57037e;
+    line-height: 1.3;
+    padding: .4em 1.4em .4em .8em;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #000;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .contenedorRegister {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .homeBtn {
+        font-size: 3rem;
+    }
+
+    .contenedorRegister h1 {
+        font-size: 20px;
+    }
+
+    .inputs input {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .contenedorRegister .btn {
+        padding: 8px;
+        font-size: 12px;
+    }
+}

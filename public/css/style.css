@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(../images/fondo6.jpg);
+    background-repeat: no-repeat;
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+main{
+    width: 100%;
+    padding: 10px 10px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.cajaTracera{
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    background-color: rgba(90, 2, 107, 0.6);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+}
+
+.cajaTracera div{
+    margin: 100px 40px;
+    color: rgb(255, 255, 255);
+    transition: all 500ms;
+}
+
+.cajaTracera div p, .cajaTracera div button{
+    margin-top: 20px;
+
+}
+.cajaTracera div h3{
+    font-weight: 500;
+    font-size: 25px;
+}
+.cajaTracera button{
+    width: 80%;
+    height: 35px;
+    background: rgb(0,0,0, 0.7);
+    border:none;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 500;
+    transition: all 300ms;
+}
+
+.cajaTracera button:hover{
+    background: #fff;
+    color: #000000;
+}
+
+.contenedorLoginRegister{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    top: -180px;
+    left: 10px;
+    transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+
+.contenedorLogin{
+    width:100%;
+    position: absolute;
+    border: 3px solid;
+    background-color: rgb(0, 0, 0);
+    color:#fff;
+    box-shadow: 0 0 15px rgb(0,0,0,20) ;
+    border-radius: 10px;
+    padding: 80px 20px;
+    max-width: 360px;
+}
+
+.contenedorLogin h1{
+    font-size: 35px;
+    text-align: center;
+}
+
+.contenedorLogin .inputs{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.inputs input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgb(255, 255, 255) ;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.inputs input::placeholder
+{
+    color: #fff;
+}
+
+.inputs i{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+
+.contenedorLogin .btn{
+    width: 100%;
+    height: 45px;
+    background: #e0dfdf;
+    border:none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgb(0,0,0,10);
+    cursor: pointer;
+    font-size: 15px;
+    color: #000000;
+    font-weight: 700;
+}
+
+
+.contenedorRegister{
+    width:100%;
+    position: absolute;
+    border: 3px solid;
+    background: rgb(0, 0, 0);
+    color:#fff;
+    box-shadow: 0 0 15px rgb(0,0,0,20) ;
+    border-radius: 10px;
+    padding: 50px 20px;
+
+}
+
+.contenedorRegister h1{
+    font-size: 35px;
+    text-align: center;
+}
+
+.contenedorRegister .inputs{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.contenedorRegister .btn{
+    width: 100%;
+    height: 45px;
+    background: #e0dfdf;
+    border:none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgb(0,0,0,10);
+    cursor: pointer;
+    font-size: 15px;
+    color: #000000;
+    font-weight: 700;
+}
+
+.formLogin{
+    opacity: 1;
+    display: block;
+}
+.contenedorRegister{
+    display: none;
+}
+
+.select-rol{
+
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color:#e0dfdf;
+    line-height: 1.3;
+    padding: .4em 1.4em .4em .8em;
+    width: 330px;
+    box-sizing: 100%;
+    background-color: #000000;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    border-radius: 40px;
+}
+.select{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 20px 0;
+}
+
+/*Haciendo el responsive
+RESPONSIVE DESING*/
+@media screen and (max-width: 850px) {
+    main{
+        margin-top: 50px;
+    }  
+
+    .cajaTracera{
+        max-width: 350px;
+        height: 300px;
+        flex-direction: column;
+        margin: auto;
+    }
+    .cajaTracera div{
+        margin: 0px;
+        position: absolute;
+    }
+
+    /*formularios*/
+    .contenedorLoginRegister{
+        top: -10px;
+        left: -5px;
+        margin: auto;
+    }
+
+    .contenedorLoginRegister div{
+        position: relative;
+    }
+}

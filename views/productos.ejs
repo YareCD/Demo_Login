@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRODUCTOS</title>
+  <link rel="stylesheet" href="/resources/css/productos.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <header>
+    <a class="homeBtn" href="/"><i class='bx bx-home'></i></a>
+  </header>
+  <script>
+  function confirmar(){
+    var resp = confirm("¿Estas seguro que deseas comprarlo?");
+    return resp
+}
+</script>
+  <div class="contenedor">
+  <h1>Lista de Productos</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Existencias</th>
+        <th>Comprar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (typeof productos !== 'undefined' && productos.length > 0) { %>
+        <% productos.forEach((producto) => { %>
+          <tr>
+            <td><%= producto.nombre %></td>
+            <td>$ <%= producto.precio %></td>
+            <td><%= producto.existencias %></td>
+            <td>
+              <form action="/comprar" method="post">
+                <input type="hidden" name="usuario_id" value="<%= usuario ? usuario.id : '' %>">
+                <input type="hidden" name="producto_id" value="<%= producto.id %>">
+                <input type="number" name="cantidad" min="1" max="<%= producto.existencias %>" value="1">
+                <button onclick="return confirmar()" type="submit">Comprar</button>
+              </form>          
+            </td>
+          </tr>
+        <% }) %>
+      <% } else { %>
+        <tr>
+          <td colspan="5">No hay productos disponibles</td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+  <!-- Referenciado por CDN SweetAlert -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- El alert tiene que ser diferente a undefined -->
+  <% if (typeof alert != "undefined") { %>
+    <script>
+      Swal.fire({
+        icon: '<%= alertIcon %>',
+        title: '<%= alertTitle %>',
+        text: '<%= alertMessage %>',
+        showConfirmButton: <%= showConfirmButton %>,
+        timer: <%= timer %>
+      }).then(() => {
+        window.location = '/<%= ruta %>';
+      });
+    </script>
+  <% } %>
+  
+</body>
+</html>

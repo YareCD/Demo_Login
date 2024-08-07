@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio</title>
+    <link rel="stylesheet" href="/resources/css/index.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <% if(login) { %>
+      <header>
+      <div class="menu container">
+        <img class="logo1" src="../resources/images/logo.png" alt="" />
+        <input type="checkbox" id="menu" />
+        <label for="menu">
+          <img src="../resources/images/logo.png" class="menu-icono" alt="" />
+        </label>
+        <h2>Bienvenid@ <%= name %></h2>
+        <nav class="navbar">
+            <div class="menu1">
+            <ul>
+            <li><a href="cerrar_sesion" class="CerrarSesion">Cerrar sesión</a></li>
+                <% if (rol === 'admin') { %>
+                <li><a href="tabla_crud" class="AdminCrud">Acceder al CRUD</a></li>
+                <% } %>
+                  
+                <li><a href="/productos"> PRODUCTOS </a></li>
+              </ul>
+            </div>
+          <img class="logo2" src="../resources/images/logo.png" alt="" />
+        </nav>
+      </div>
+
+      <div class="header-content container">
+        <div class="swiper mySwiper-1">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="slider">
+                <div class="slider-txt">
+                  <h1>¡GATO HAMBURGUESA! $790</h1>
+                  <p>
+                    Prueba nuestra deliciosa hamburguesa,
+                    hecha con los ingredientes más frescos y de alta calidad.
+                     Cada bocado está lleno de sabor, desde la jugosa carne a la perfección cocida,
+                      hasta los ingredientes frescos y crujientes que complementan cada capa.
+                   ¡No te pierdas esta experiencia gastronómica única y
+                    ven a disfrutar de una hamburguesa que te hará volver por más!
+                  </p>
+                  <div class="botones">
+                    <a href="/productos" class="btn-1"> Menú</a>
+                  </div>
+                </div>
+                <div class="slider-img">
+                  <img src="../resources/images/hambur1.png" alt="" />
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="slider">
+                <div class="slider-txt">
+                  <h1>¡PERRITO HAMBURGUESA! $590</h1>
+                  <p>
+                    ¡Haz que tu mascota se vea adorablemente deliciosa con nuestros disfraces de hamburguesa!
+                     Perfectos para sesiones de fotos, fiestas de disfraces o simplemente para alegrar el día,
+                      estos disfraces están diseñados para ser cómodos y muy llamativos.
+                       ¡Tu mascota será el centro de atención en cualquier ocasión!
+                  </p>
+                  <div class="botones">
+                    <a href="/productos" class="btn-1"> Menú</a>
+                  </div>
+                </div>
+                <div class="slider-img">
+                  <img src="../resources/images/hambur3.png" alt="" />
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="slider">
+                <div class="slider-txt">
+                  <h1>¡HAMBURGUESITA! $499 </h1>
+                  <p>
+                    Dale a tu mascota el look más divertido con nuestro disfraz de hamburguesa. 
+                    Hecho con materiales suaves y cómodos.
+                    ¡Prepárate para recibir elogios y
+                     muchas sonrisas cuando tu mascota pasee con estilo!
+                  </p>
+                  <div class="botones">
+                    <a href="/productos" class="btn-1"> Menú</a>
+                  </div>
+                </div>
+                <div class="slider-img">
+                  <img src="../resources/images/hambur.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-pagination"></div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="products">
+        <div class="tabs container">
+          <input type="radio" name="tabs" id="tab1" checked="checked" class="tabInput" value="1"/>
+          <label for="tab1"> PIZZA </label>
+          <div class="tab">
+            <div class="swiper mySwiper-2" id="swiper1">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="product">
+                    <div class="product-img">
+                      <h4>Nuevo</h4>
+                      <img src="../resources/images/pizza1.png" alt="" />
+                    </div>
+                    <div class="product-txt">
+                      <h4>Gato pizza</h4>
+                      <p>Alta calidad</p>
+                      <span class="price"> $90.00</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="product">
+                    <div class="product-img">
+                      <h4>Nuevo</h4>
+                      <img src="../resources/images/pizza2.png" alt="" />
+                    </div>
+                    <div class="product-txt">
+                      <h4>Gato come pizza</h4>
+                      <p>Alta calidad</p>
+                      <span class="price"> $280.00</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="product">
+                    <div class="product-img">
+                      <h4>Nuevo</h4>
+                      <img src="../resources/images/pizza3.png" alt="" />
+                    </div>
+                    <div class="product-txt">
+                      <h4>Gato pizzita</h4>
+                      <p>Alta calidad</p>
+                      <span class="price"> $230.00</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+
+          <input
+            type="radio"
+            name="tabs"
+            id="tab2"
+            checked="checked"
+            class="tabInput"
+            value="2"
+          />
+          <label for="tab2"> HOTDOGS </label>
+          <div class="tab">
+            <div class="swiper mySwiper-2" id="swiper2">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="product">
+                    <div class="product-img">
+                      <h4>Nuevo</h4>
+                      <img src="../resources/images/hotdog1.png" alt="" />
+                    </div>
+                    <div class="product-txt">
+                      <h4>Chihuahot dog</h4>
+                      <p>Alta calidad</p>
+                      <span class="price"> $85.00</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="product">
+                    <div class="product-img">
+                      <h4>Nuevo</h4>
+                      <img src="../resources/images/hotdog2.png" alt="" />
+                    </div>
+                    <div class="product-txt">
+                      <h4>Hot Doggy</h4>
+                      <p>Alta calidad</p>
+                      <span class="price"> $79.00</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="product">
+                    <div class="product-img">
+                      <h4>Nuevo</h4>
+                      <img src="../resources/images/hotdog3.png" alt="" />
+                    </div>
+                    <div class="product-txt">
+                      <h4>Hot Dog</h4>
+                      <p>Alta calidad</p>
+                      <span class="price"> $125.00</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+
+          <input
+            type="radio"
+            name="tabs"
+            id="tab3"
+            checked="checked"
+            class="tabInput"
+            value="3"
+          />
+          <label for="tab3"> TAQUITOS </label>
+          <div class="tab">
+            <div class="swiper mySwiper-2" id="swiper3">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="product">
+                    <div class="product-img">
+                      <h4>Nuevo</h4>
+                      <img src="../resources/images/taco1.png" alt="" />
+                    </div>
+                    <div class="product-txt">
+                      <h4>Chihua Taco</h4>
+                      <p>Super alta calidad</p>
+                      <span class="price"> $390.00</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="product">
+                    <div class="product-img">
+                      <h4>Nuevo</h4>
+                      <img src="../resources/images/taco2.png" alt="" />
+                    </div>
+                    <div class="product-txt">
+                      <h4>Taquito</h4>
+                      <p>Super alta calidad</p>
+                      <span class="price"> $585.00</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="product">
+                    <div class="product-img">
+                      <h4>Nuevo</h4>
+                      <img src="../resources/images/taco3.png" alt="" />
+                    </div>
+                    <div class="product-txt">
+                      <h4>Super taquito</h4>
+                      <p>Ultra mega alta calidad</p>
+                      <span class="price"> $999.00</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <section class="info container">
+      <div class="info-img">
+        <img src="../resources/images/info.png" alt="" />
+      </div>
+
+      <div class="info-txt">
+        <h2>INFORMACIÓN</h2>
+        <p>
+          "Disponibles en varios tamaños, 
+          nuestros disfraces se ajustan a mascotas grandes y pequeñas. 
+          ¡Asegúrate de encontrar el tamaño perfecto para tu compañero de cuatro patas!"
+        </p>
+        <a href="#" class="btn-2">Más información</a>
+      </div>
+    </section>
+
+    <section>
+
+        <div class="horario">
+            <div class="horario-info container">
+                <h2>Horario</h2>
+                <div class="horario-txt">
+                    <div class="txt">
+                        <h4>Dirección</h4>
+                        <p>
+                            Av. Sur Oriente 3 y 4 
+                        </p>
+                        <p>
+                            Tula de Allende. hgo.
+                        </p>
+                    </div>
+
+                    <div class="txt">
+                        <h4>Horario</h4>
+                        <p>
+                            Lunes a viernes 
+                            9AM - 8PM
+                        </p>
+                        <p>
+                            Sabado y domingo
+                            11AM - 10PM
+                        </p>
+                    </div>
+
+                    <div class="txt">
+                      <h4>Telefono</h4>
+                      <p>
+                          773 111 2222
+                      </p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <footer class="footer container">
+        <img class="logo-2" src="../resources/images/logo.png" alt="">
+        <div class="links">
+          <h4>lorem</h4>
+          <ul>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+          </ul>
+        </div>
+
+        <div class="links">
+          <h4>lorem</h4>
+          <ul>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+          </ul>
+        </div>
+
+        <div class="links">
+          <h4>lorem</h4>
+          <ul>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+          </ul>
+        </div>
+     </footer>
+
+    <% } else { %>
+    <div class="cajaTracera">
+      <div class="contenido">
+        <div class="mensaje-login">
+          <h2>¡Inicia sesión para acceder!</h2>
+          <p>Debes iniciar sesión para visitar la página.</p>
+          <a href="login" class="a-login">Iniciar Sesión</a>
+        </div>
+      </div>
+    </div>
+    <% } %>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/resources/index.js"></script>
+  </body>
+</html>

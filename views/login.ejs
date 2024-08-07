@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+   <link rel="stylesheet" href="resources/css/style.css">
+   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    
+   <div class="contenedor">
+
+    <div class="cajaTracera">
+        <div class="cajaLogin">
+            <h3>¿Ya tienes una cuenta?</h3>
+            <p>Inicia sesion</p>
+            <button id="btn_inicio_sesion"> INICIAR SESION</button>
+        </div>
+        <div class="cajaRegister">
+            <h3>¿Aún no tienes una cuenta?</h3>
+            <p>Registrate</p>
+            <button id="btn_registrar"> REGÍSTRARSE</button>
+        </div>
+    </div>
+    <!--Formulario de inicio de sesión-->
+    <div class="contenedorLoginRegister">
+    <div class="contenedorLogin">
+        <form action="/auth" method="POST" class="formLogin">
+            <h1>INICIAR SESIÓN</h1>
+            <div class="inputs">
+                <input type ="text" placeholder="Usuario" name="usuario" required maxlength="20" minlength="3">
+                <i class='bx bx-user'></i>
+            </div>
+            <div class="inputs">
+                <input type ="password" placeholder="Contraseña" name="password" required maxlength="20" minlength="8">
+                <i class='bx bx-lock-alt'></i>
+            </div>
+            <button type="submit" class="btn" value="loginEntrar">ENTRAR</button>
+        </form>
+        </div>
+        <!--Formulario de registro-->
+        <div class="contenedorRegister">
+            <form action="/login" method="POST" class="formRegister">
+                <h1>REGÍSTRARSE</h1>
+                <div class="inputs">
+                    <input type ="text" placeholder="Nombre Completo" name="nombre_completo" required maxlength="40" minlength="10">
+                </div>
+                <div class="inputs">
+                    <input type ="email" placeholder="Correo Electronico" name="correo" required maxlength="100" minlength="3">
+                    <i class='bx bx-envelope'></i>
+                </div>
+                <div class="inputs">
+                    <input type ="text" placeholder="Usuario" name="usuario" required maxlength="20" minlength="3">
+                    <i class='bx bx-user'></i>
+                </div>
+                <div class="inputs">
+                    <input type ="password" placeholder="Contraseña" name="password" required maxlength="20" minlength="8">
+                    <i class='bx bx-lock-alt'></i>
+                </div>
+                <div class="input">
+                        <input name= "rol" value="visitante" hidden>
+                </div>
+                <button type="submit" class="btn" value="registro">REGÍSTRARSE</button>
+            </form>
+            </div>
+        </div>
+   </div> 
+   <script src="resources/script.js"></script>
+
+   <!--Referenciado por cdn sweetalert-->
+   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+   <!--El alert tiene que ser diferente a undefined-->
+   
+   <% if(typeof alert != "undefined") { %>
+        <script>
+                Swal.fire
+              ({
+                    icon: '<%= alertIcon %>',
+                    title: '<%= alertTitle %>',
+                    text: '<%= alertMessage %>',
+                    showConfirmButton: <%= showConfirmButton %>, 
+                    timer: <%= timer %>
+                }).then(()=>{
+                    window.location= '/<%= ruta %>'
+                });
+        </script>
+   <% } %>
+</body>
+</html>
