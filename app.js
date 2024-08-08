@@ -117,8 +117,8 @@ app.post('/login', async (req, res) => {
           } else {
             req.session.loggedin = true;
             req.session.nombre_completo = results[0].nombre_completo;
-            req.session.usuario_id = results[0].id; // Asegúrate de que `id` es el ID numérico
-            req.session.rol = results[0].rol; // Almacenar el rol en la sesión
+            req.session.usuario_id = results[0].id; 
+            req.session.rol = results[0].rol; 
             res.render('login', {
               alert: true,
               alertTitle: "SESIÓN INICIADA",
