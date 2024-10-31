@@ -4,7 +4,7 @@
  const app = express();
 
  // Agregar urlencoded para capturar los datos del formulario
-app.use(express.urlencoded({extended:false}));
+app.use(express.urlencoded({extended:false})); //analiza datos codificados en URL
 app.use(express.json());//especificar que se va a trabajar con json
  
 // invocar a dotenv
